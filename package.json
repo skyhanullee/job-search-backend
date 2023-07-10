@@ -1,0 +1,40 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for final project in jscript330",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --runInBand --verbose --coverage",
+    "ci": "jest --json --runInBand | node .github/workflows/parseOutput.js",
+    "tdd": "jest --watch --runInBand --verbose --coverage --watchAll",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Sky Lee",
+  "license": "MIT",
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "preset": "@shelf/jest-mongodb",
+    "watchPathIgnorePatterns": [
+      "globalConfig"
+    ]
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3"
+  },
+  "dependencies": {
+    "@shelf/jest-mongodb": "^4.1.7",
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.3.1",
+    "nodemon": "^2.0.22",
+    "uuid": "^9.0.0"
+  }
+}
