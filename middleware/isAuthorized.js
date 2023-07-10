@@ -36,7 +36,6 @@ const isAuthorized = async (req, res, next) => {
     if (e instanceof jwt.JsonWebTokenError) {
       res.status(401).send('Unauthorized');
     }
-    // console.log(e);
     next(e);
   }
 };

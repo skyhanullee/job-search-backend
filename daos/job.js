@@ -7,7 +7,6 @@ module.exports = {};
 
 // should create a job (only admin users or adzuna api calls can create jobs)
 module.exports.createJob = async (jobObj) => {
-  // const created = await Job.create(jobObj);
   const created = await db.collection('testJobs').insertOne(jobObj);
   if (!created) {
     return null;
@@ -49,7 +48,6 @@ module.exports.updateJobById = async (jobId, jobObj) => {
 
 module.exports.deleteJobById = async (jobId) => {
   const deletedJob = await Job.deleteOne({ jobId: jobId });
-  // console.log(deletedJob);
   return deletedJob;
 }
 
