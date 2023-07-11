@@ -35,6 +35,10 @@ module.exports.updateBookmarkListByUserId = async (userId, jobId) => {
     return null;
   }
 
+  if (!convertedJob) {
+    return null;
+  }
+
   bookmarkList.jobs.push(convertedJob);
   await bookmarkList.save();
   return bookmarkList;
